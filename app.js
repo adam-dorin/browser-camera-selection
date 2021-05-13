@@ -1,6 +1,6 @@
 const video = document.getElementById('video');
 const button = document.getElementById('button');
-const select = document.getElementById('select');
+const select = document.querySelector('div.container');
 let currentStream;
 
 function stopMediaTracks(stream) {
@@ -15,25 +15,27 @@ function gotDevices(mediaDevices) {
   let count = 1;
   mediaDevices.forEach(mediaDevice => {
     if (mediaDevice.kind === 'videoinput') {
-      const option = document.createElement('option');
-      option.value = mediaDevice.deviceId;
+      const button = document.createElement('button');
+      button.value = mediaDevice.deviceId;
       const label = mediaDevice.label || `Camera ${count++}`;
       const textNode = document.createTextNode(label);
-      option.appendChild(textNode);
-      select.appendChild(option);
+      button.appendChild(textNode);
+      button.addEventListener('click',clickItem);
+      select.appendChild(button);
     }
   });
 }
-
-button.addEventListener('click', event => {
+function clickItem(event) {
+  console.log('click');
   if (typeof currentStream !== 'undefined') {
     stopMediaTracks(currentStream);
   }
   const videoConstraints = {};
-  if (select.value === '') {
+  console.log(event.target.value);
+  if (event.target.value === '') {
     videoConstraints.facingMode = 'environment';
   } else {
-    videoConstraints.deviceId = { exact: select.value };
+    videoConstraints.deviceId = { exact: event.target.value };
   }
   const constraints = {
     video: videoConstraints,
@@ -44,12 +46,14 @@ button.addEventListener('click', event => {
     .then(stream => {
       currentStream = stream;
       video.srcObject = stream;
+      console.log(stream,stream.getVideoTracks(),stream.getVideoTracks()[0].getCapabilities());
+      
       return navigator.mediaDevices.enumerateDevices();
     })
     .then(gotDevices)
     .catch(error => {
       console.error(error);
     });
-});
-
+}
+button.addEventListener('click', clickItem );
 navigator.mediaDevices.enumerateDevices().then(gotDevices);
