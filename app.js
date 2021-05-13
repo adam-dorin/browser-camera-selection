@@ -11,16 +11,20 @@ function stopMediaTracks(stream) {
 
 function gotDevices(mediaDevices) {
   select.innerHTML = '';
-  select.appendChild(document.createElement('option'));
-  let count = 1;
+  let count = 0;
   mediaDevices.forEach(mediaDevice => {
+    console.log(count)
     if (mediaDevice.kind === 'videoinput') {
+      count++;
       const button = document.createElement('button');
       button.value = mediaDevice.deviceId;
       const label = mediaDevice.label || `Camera ${count++}`;
       const textNode = document.createTextNode(label);
       button.appendChild(textNode);
       button.addEventListener('click',clickItem);
+      if(count>1){
+        button.classList.add('ml-1')
+      }
       select.appendChild(button);
     }
   });
