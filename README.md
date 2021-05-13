@@ -3,7 +3,7 @@ Originally forked over from:
 
 ### See it in action
 
-You can test the basic version of this project by [visiting it online here](https://philnash.github.io/mediadevices-camera-selection/).
+You can test the basic version of this project by [visiting it online here](https://adam-dorin.github.io/browser-camera-selection/).
 
 ### Run the project yourself
 
