@@ -1,40 +1,26 @@
 {
-  "name": "camera-choice",
+  "name": "camera-selection",
   "version": "0.1.0",
   "description": "Example code to show selecting cameras with JavaScript",
   "main": "index.js",
   "scripts": {
-    "build:quickstart": "watchify video-chat/quickstart/src/index.js -o video-chat/quickstart/public/index.js",
-    "clean:quickstart": "rimraf video-chat/quickstart/public/index.js",
-    "start": "npm run clean:quickstart && concurrently \"npm run build:quickstart\" \"node video-chat/server\"",
-    "serve": "serve ."
+    "start": "./node_modules/.bin/http-server -a localhost -p 8080"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/philnash/mediadevices-camera-selection.git"
+    "url": "git+https://github.com/adam-dorin/browser-camera-selection.git"
   },
   "keywords": [
-    "webrtc",
     "getUserMedia"
   ],
-  "author": "Phil Nash <philnash@twilio.com>",
+  "author": "Dorin Adam",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/philnash/mediadevices-camera-selection/issues"
+    "url": "https://github.com/adam-dorin/browser-camera-selection/issues"
   },
-  "homepage": "https://github.com/philnash/mediadevices-camera-selection#readme",
-  "dependencies": {
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "twilio": "^3.60.0",
-    "twilio-video": "^2.13.1"
-  },
+  "homepage": "https://github.com/adam-dorin/browser-camera-selection#readme",
+  "dependencies": {},
   "devDependencies": {
-    "browserify": "^17.0.0",
-    "concurrently": "^6.0.1",
-    "copyfiles": "^2.4.1",
-    "rimraf": "^3.0.2",
-    "serve": "^11.3.2",
-    "watchify": "^4.0.0"
+    "http-server": "~0.12.3"
   }
 }
