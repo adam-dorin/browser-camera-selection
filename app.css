@@ -73,6 +73,27 @@ button {
   color: grey;
   border-radius: 5px;
 }
+
+button.active {
+  border: 4px solid green;
+  border-radius: 5px;
+}
+
 .ml-1 {
   margin-left: 1rem;
+}
+
+.capabilities {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  height: 25vh;
+  overflow: auto;
+}
+
+.capabilities .element {
+  flex: 1 0 27%;
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
 }

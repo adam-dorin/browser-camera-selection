@@ -1,6 +1,6 @@
 {
-  "name": "camera-selection",
-  "version": "0.1.0",
+  "name": "browser-camera-selection",
+  "version": "0.2.0",
   "description": "Example code to show selecting cameras with JavaScript",
   "main": "index.js",
   "scripts": {

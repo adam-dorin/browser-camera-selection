@@ -13,18 +13,22 @@
 <body>
 
   <header>
-    <h1>Camera Selection</h1>
+    <h1>Camera Selection
+      <button id="getCameraDevices">Get camera(s)</button>
+    
+    </h1>
   </header>
 
   <main>
     <div class="controls">
-      <p>1. Hit get cameras to allow access</p>
-      <button id="button">Get camera(s)</button>
+      <p>1. Hit "Get camera(s)" to allow access</p>
       <p>2. Your cameras should appear listed bellow</p>
       <div class="container"></div>
     </div>
 
     <video id="video" autoplay playsinline></video>
+
+    <div class="capabilities"></div>
   </main>
 
   <footer>
