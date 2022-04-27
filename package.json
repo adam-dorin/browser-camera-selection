@@ -19,8 +19,7 @@
     "url": "https://github.com/adam-dorin/browser-camera-selection/issues"
   },
   "homepage": "https://github.com/adam-dorin/browser-camera-selection#readme",
-  "dependencies": {},
   "devDependencies": {
-    "http-server": "~0.12.3"
+    "http-server": "^14.1.0"
   }
 }
