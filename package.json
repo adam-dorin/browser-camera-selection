@@ -4,7 +4,7 @@
   "description": "Example code to show selecting cameras with JavaScript",
   "main": "index.js",
   "scripts": {
-    "start": "./node_modules/.bin/http-server -a localhost -p 8080"
+    "start": "cd node_modules/.bin/ && http-server -a localhost -p 8080"
   },
   "repository": {
     "type": "git",
