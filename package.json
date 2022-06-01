@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/adam-dorin/browser-camera-selection#readme",
   "devDependencies": {
-    "http-server": "^14.1.0"
+    "http-server": "^14.1.1"
   }
 }
